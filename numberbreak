@@ -1,0 +1,41 @@
+function numberIsMadeOf(initialNumber){
+  
+var finalNumber=[ ];
+
+var initialBroken=initialNumber.toString().split('');
+
+while(initialBroken.length!==0){ //do while condition not met
+
+var mapVar=initialBroken.map(function(currentValue, indexValue, initialBroken){//loop through array values 
+
+  if(indexValue!==0){
+    
+          currentValue=0;//turn all non zero indexes value to 0
+  
+    
+}
+  
+  if(indexValue===0){
+    
+            currentValue=currentValue;
+    
+}
+  
+       return currentValue.toString();//result from if else
+       
+  
+}).toString().replace(/,/g,"");//remove commas
+
+finalNumber.push(parseInt(mapVar));//push turn to number
+
+ initialBroken.shift();//remove zero index number
+}
+
+console.log(finalNumber);
+
+      return finalNumber;
+
+}
+
+
+numberIsMadeOf(prompt("input number"));
